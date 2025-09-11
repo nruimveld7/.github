@@ -20,7 +20,7 @@ I also have a strong background in **industrial robotics, PLCs, 3D modeling/prin
 
 ## 📫 Let’s Connect
 - 💼 [LinkedIn](https://www.linkedin.com/in/noah-ruimveld-551b841a4)  
-- 🛠️ [My Repositories](https://github.com/nruin7)  
+- 🛠️ [My Repositories](https://github.com/nruin7?tab=repositories)  
 
 ---
 ⭐ I’m always exploring ways to merge **reliability engineering** with **modern connectivity**.  

@@ -1,0 +1,33 @@
+# .github/labels.yml
+- name: bug
+  color: d73a4a
+  description: Something isn't working
+
+- name: enhancement
+  color: a2eeef
+  description: New feature or request
+
+- name: documentation
+  color: 0075ca
+  description: Improvements or additions to docs
+
+- name: chore
+  color: cccccc
+  description: Maintenance, refactor, or tooling
+
+# Nice-to-haves
+- name: help wanted
+  color: 008672
+  description: Extra attention is needed
+
+- name: good first issue
+  color: 7057ff
+  description: Good for newcomers
+
+- name: CI
+  color: 0e8a16
+  description: Continuous Integration pipelines and config
+
+- name: security
+  color: b60205
+  description: Vulnerabilities, patches, or audits

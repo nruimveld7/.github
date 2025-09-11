@@ -1,0 +1,35 @@
+# .github/workflows/sync-all-repos.yml
+name: Sync labels to all repos
+
+on:
+  workflow_dispatch: {}              # manual run from the Actions tab
+  push:
+    branches:
+      - main                         # set to your default branch (e.g., 'master' if you use that)
+    paths:
+      - ".github/labels.yml"         # only run when labels.yml changes
+
+concurrency:
+  group: labels-sync-all
+  cancel-in-progress: false
+
+permissions:
+  contents: read                     # least-privilege for checking out this repo
+
+jobs:
+  fanout:
+    if: github.ref == 'refs/heads/main'  # safety guard for manual runs on other branches
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repos:
+          - nruin7/SocketLibraryCPP
+          - nruin7/Arduino-XBox-Controller-Handler
+          # add more repos here
+    steps:
+      - name: Call reusable workflow
+        uses: ./.github/workflows/labels-sync.yml
+        with:
+          target_repo: ${{ matrix.repos }}
+        secrets:
+          PAT: ${{ secrets.PAT }}

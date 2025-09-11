@@ -1,0 +1,44 @@
+# .github/workflows/labels-sync.yml
+name: Sync labels (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      target_repo:
+        description: "owner/repo to sync labels to"
+        required: true
+        type: string
+    secrets:
+      LABELSYNCBOT_APP_ID:
+        description: "GitHub App ID"
+        required: true
+      LABELSYNCBOT_INSTALLATION_ID:
+        description: "GitHub App installation ID"
+        required: true
+      LABELSYNCBOT_PRIVATE_KEY:
+        description: "GitHub App private key (PEM contents)"
+        required: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout .github repo (source of truth)
+        uses: actions/checkout@v4
+
+      - name: Authenticate as GitHub App
+        id: auth
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.LABELSYNC_APP_ID }}
+          installation_id: ${{ secrets.LABELSYNC_INSTALLATION_ID }}
+          private_key: ${{ secrets.LABELSYNC_PRIVATE_KEY }}
+
+      - name: Sync labels to target repo
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.yml
+          repo: ${{ inputs.target_repo }}
+          delete-other-labels: false
+        env:
+          GITHUB_TOKEN: ${{ steps.auth.outputs.token }}

@@ -1,0 +1,24 @@
+name: "🧹 Chore / Maintenance"
+description: "Request a cleanup, refactor, or dependency update"
+title: "[Chore] "
+labels: ["chore"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What maintenance task is needed?
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why is this cleanup/refactor/update necessary?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Anything else to note.

@@ -32,4 +32,6 @@ jobs:
         with:
           target_repo: ${{ matrix.repos }}
         secrets:
-          PAT: ${{ secrets.PAT }}
+          LABELSYNC_APP_ID: ${{ secrets.LABELSYNC_APP_ID }}
+          LABELSYNC_INSTALLATION_ID: ${{ secrets.LABELSYNC_INSTALLATION_ID }}
+          LABELSYNC_PRIVATE_KEY: ${{ secrets.LABELSYNC_PRIVATE_KEY }}

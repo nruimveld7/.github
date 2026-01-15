@@ -16,7 +16,7 @@ I also have a strong background in **industrial robotics, PLCs, 3D modeling/prin
 - **SocketLibraryCPP** – C++ Windows socket static library for standalone systems and SCADA/automation integrations.
 - **Smart Matter Relay** – ESP32-C6 Thread or Wi-Fi compatible relay controller for smart homes.
 - **RFID Inspections** – RFID-based offline/online industrial inspection platform.
-- **BluepadGPIOBridge** - Arduino library for expanding GPIO capabilities of Bluepad powered ESP devices.
+- **GamepadSerialBridge** - Arduino library for expanding GPIO capabilities of Bluepad powered ESP devices.
 
 ## 📫 Let’s Connect
 - 💼 [LinkedIn](https://www.linkedin.com/in/noah-ruimveld-551b841a4)  
